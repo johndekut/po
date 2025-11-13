@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
-
+import { Roboto_Slab} from 'next/font/google';
 import "./globals.css";
+
+const robotoslab= Roboto_Slab({
+  subsets: ['latin'],
+  weight: ['300', '400', '600', '700'],
+})
+
+
 
 
 
@@ -18,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` antialiased`}
+        className={` ${robotoslab}antialiased`}
       >
         {children}
      

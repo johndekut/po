@@ -1,65 +1,71 @@
+// pages/index.js
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <main>
-      <nav>
-        <Link href="#home">
-          <div className="absolute z-50 py-3">
-            <Image src="/favicon.ico" alt="logo" height="20" width="20" />
-          </div>
+    <main className="relative w-full min-h-screen font-sans">
+      {/* Navbar */}
+      <nav className="fixed w-full flex justify-between items-center p-6 bg-white bg-opacity-70 backdrop-blur-md z-50 shadow-md">
+        <Link href ="#home">
+          <Image src = "/logo.jpg"
+          height={60}
+          width={80}
+          className="rounded-2xl"
+          />
         </Link>
-        <div className="flex justify-end p-2 bg-green-500 text-black relative">
-          <Link href="#home" className="pr-3 hover:text-white">Home</Link>
-          <Link href="#About" className="pr-3 hover:text-white">About</Link>
-          <Link href="#Projects" className="pr-3 hover:text-white">Projects</Link>
-          <Link href="#skills" className="pr-3 hover:text-white">skills</Link>
-          <Link href="#contact" className="pr-3 hover:text-white">contact</Link>
-          <Link href="#About" className="pr-3 hover:text-white">About</Link>
-        </div>
+         
+        <ul className="flex space-x-5 text-gray-800 text-lg font-bold">
+          <li><Link href="#projects" className="hover:text-blue-500 transition  ">Projects</Link></li>
+          <li><Link href="#skills" className="hover:text-blue-500 transition">Skills</Link></li>
+          <li><Link href="#about" className="hover:text-blue-500 transition">About</Link></li>
+          <li><Link href="#contact" className="hover:text-blue-500 transition">Contact</Link></li>
+          <li><Link href="#home" className="hover:text-blue-500 transition">Home</Link></li>
+        </ul>
       </nav>
 
-      {/* Keep image normal-sized */}
-      <div className="relative flex justify-center mt-5"> 
-        <Image src="/laptop.jpg" width={1000} height={500} alt="laptop" /> 
+      {/* Hero Section */}
+      <section id="home" className="relative w-full h-[75vh]">
+        <Image
+          src="/laptop.jpg" // Replace with your image
+          alt="Hero Image"
+          fill
+          className="object-cover"
+        />
 
-      
-        <div className="absolute left-20 top-1/2 transform -translate-y-1/2 rounded-2xl text-white w-60 h-40 flex flex-col items-center justify-center shadow-lg">
-         
-          <span className="bold text-6xl">John Muchiri</span>
-          <h3>full stack web developer</h3>
-          <h3>Based in Nyeri, Kenya</h3>
-        </div>
-
-        <div className="absolute right-10 top-1/2 transform -translate-y-1/2 flex flex-col space-y-3 items-end">
-         
-          <div className="bg-green-400 w-72 rounded-2xl pb-2">
-            <div className="p-3.5 text-center text-black">
-              <h1>Some content will go here</h1>
-              <h1>Some content will go here</h1>
-            </div>
-          </div>
-          <div className="bg-green-400 w-72 rounded-2xl pb-2">
-            <div className="p-3.5 text-center text-black">
-              <h1>Some content will go here</h1>
-              <h1>Some content will go here</h1>
-            </div>
-          </div>
-          <div className="bg-green-400 w-72 rounded-2xl pb-2">
-            <div className="p-3.5 text-center text-black">
-              <h1>Some content will go here</h1>
-              <h1>Some content will go here</h1>
-            </div>
-          </div>
-          <div className="bg-green-400 w-72 rounded-2xl pb-2">
-            <div className="p-3.5 text-center text-black">
-              <h1>Some content will go here</h1>
-              <h1>Some content will go here</h1>
-            </div>
+        {/* Floating Content */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 space-y-6 text-center">
+          <h1 className="text-5xl font-bold text-white drop-shadow-lg">Hi, I'm John Muchiri</h1>
+          <p className="text-lg text-white drop-shadow-md">
+            A Full Stack Web Developer crafting awesome web experiences.
+          </p>
+          <div className="flex justify-center space-x-4 mt-4">
+            <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition">
+              View Projects
+            </button>
+            <button className="px-6 py-2 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition">
+              Contact Me
+            </button>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Placeholder Sections */}
+      <section id="about" className="h-screen flex items-center justify-center bg-gray-50">
+        <h1 className="text-4xl font-bold text-blue-600">About Me</h1>
+      </section>
+
+      <section id="skills" className="h-screen flex items-center justify-center bg-gray-200">
+        <h1 className="text-4xl font-bold text-blue-600">Skills</h1>
+      </section>
+
+      <section id="projects" className="h-screen flex items-center justify-center bg-gray-50">
+        <h1 className="text-4xl font-bold text-blue-600">Projects</h1>
+      </section>
+
+      <section id="contact" className="h-screen flex items-center justify-center bg-gray-200">
+        <h1 className="text-4xl font-bold text-blue-600">Contact Me</h1>
+      </section>
     </main>
   );
 }
