@@ -11,6 +11,7 @@ export default function Home() {
           <Image src = "/logo.jpg"
           height={60}
           width={80}
+          alt="logo image"
           className="rounded-2xl"
           />
         </Link>
@@ -25,30 +26,52 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative w-full h-[75vh]">
-        <Image
-          src="/laptop.jpg" // Replace with your image
-          alt="Hero Image"
-          fill
-          className="object-cover"
-        />
+      {/* Hero Section */}
+<section id="home" className="relative w-full h-screen">
+  <div className="relative w-full inline-block">
+    <Image
+      src="/laptop.jpg"
+      alt="Hero Image"
+      width={1000}
+      height={500}
+      className="w-full h-auto"
+    />
 
-        {/* Floating Content */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 space-y-6 text-center">
-          <h1 className="text-5xl font-bold text-white drop-shadow-lg">Hi, I'm John Muchiri</h1>
-          <p className="text-lg text-white drop-shadow-md">
-            A Full Stack Web Developer crafting awesome web experiences.
-          </p>
-          <div className="flex justify-center space-x-4 mt-4">
-            <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition">
-              View Projects
-            </button>
-            <button className="px-6 py-2 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition">
-              Contact Me
-            </button>
-          </div>
+    <div className="grid grid-cols-3 gap-4 ">
+  <div className="bg-gray-300 rounded-lg p-3 text-black text-center">
+    <h2 className="font-bold"> project design</h2>
+    <p></p>
+  </div>
+  <div className="bg-green-500 p-6 text-white text-center"></div>
+  <div className="bg-green-500 p-6 text-white text-center">Box 3</div>
+  <div className="bg-green-500 p-6 text-white text-center">Box 4</div>
+  <div className="bg-green-500 p-6 text-white text-center">Box 5</div>
+  <div className="bg-green-500 p-6 text-white text-center">Box 6</div>
+</div>
+
+
+    {/* Floating Content */}
+    <div className="absolute inset-0 flex flex-col items-center justify-center text-center space-y-5">
+      <h1 className="text-5xl font-bold text-white drop-shadow-lg">Hi, I'm John Muchiri</h1>
+      <p className="text-lg text-white drop-shadow-md">
+        A Full Stack Web Developer crafting awesome web experiences.
+      </p>
+      <div className="flex justify-center space-x-4 mt-4 ">
+        <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-white hover:text-blue-500 transition">
+          View Projects
+        </button>
+        <button className="px-6 py-2 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition">
+          Contact Me
+        </button>
+       
+      </div>
+       <div>
+          <button className="bg-amber-600 px-6 py-2 rounded-lg">Lets build your website</button>
         </div>
-      </section>
+    </div>
+  </div>
+</section>
+
 
       {/* Placeholder Sections */}
       <section id="about" className="h-screen flex items-center justify-center bg-gray-50">
